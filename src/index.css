@@ -12,12 +12,27 @@
     --color-text-muted: #A7A1B0;
   }
 
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 100%;
+    margin: 0;
+  }
+
   body {
     background-color: #0B0A0F;
     color: #F5F3F7;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
-    min-width: 280px;
   }
 
   html {
@@ -37,6 +52,21 @@
   a {
     -webkit-tap-highlight-color: transparent;
   }
+}
+
+#root > div,
+main,
+main > section {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+header > .max-w-7xl,
+main > section > .max-w-7xl,
+footer > .max-w-7xl {
+  width: 100%;
+  min-width: 0;
 }
 
 @media (max-width: 639px) {
