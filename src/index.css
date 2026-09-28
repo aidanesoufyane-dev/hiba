@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-bg-primary: #0B0A0F;
+    --color-bg-secondary: #13111C;
+    --color-bg-card: #181524;
+    --color-purple: #9B5CFF;
+    --color-purple-bright: #B77CFF;
+    --color-purple-lavender: #C9A7FF;
+    --color-text-white: #F5F3F7;
+    --color-text-muted: #A7A1B0;
+  }
+
+  body {
+    background-color: #0B0A0F;
+    color: #F5F3F7;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Typography */
+.font-display {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.font-heading {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.font-script {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Glow & Effects */
+.purple-glow-sm {
+  box-shadow: 0 0 25px -5px rgba(155, 92, 255, 0.25);
+}
+
+.purple-glow {
+  box-shadow: 0 0 45px -10px rgba(155, 92, 255, 0.35);
+}
+
+.purple-glow-lg {
+  box-shadow: 0 0 80px -15px rgba(155, 92, 255, 0.45);
+}
+
+.purple-glow-text {
+  text-shadow: 0 0 25px rgba(183, 124, 255, 0.5);
+}
+
+.purple-border-gradient {
+  border-image: linear-gradient(135deg, rgba(183, 124, 255, 0.5), rgba(155, 92, 255, 0.1), transparent) 1;
+}
+
+/* Background grid / radial lights */
+.bg-radial-purple {
+  background: radial-gradient(circle at 50% 20%, rgba(155, 92, 255, 0.15) 0%, rgba(11, 10, 15, 0) 70%);
+}
+
+.bg-radial-hero {
+  background: radial-gradient(circle at 75% 30%, rgba(183, 124, 255, 0.18) 0%, rgba(155, 92, 255, 0.05) 40%, rgba(11, 10, 15, 0) 70%);
+}
+
+/* Noise texture overlay */
+.bg-noise {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Spin animation for circular badge */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0A0F;
+}
+::-webkit-scrollbar-thumb {
+  background: #252033;
+  border-radius: 4px;
+  border: 1px solid rgba(155, 92, 255, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3B3354;
+}
+
+/* Smooth motion handling */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
