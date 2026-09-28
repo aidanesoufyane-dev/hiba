@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import defaultHeroPortrait from '../assets/images/hero_hiba_portrait_1790554793889.jpg';
 
 const STORAGE_KEY = 'hiba_profile_photo';
+const defaultHeroPortrait = '/assets/profile.jpeg?v=5c03a02';
 
 export function useProfilePortrait() {
   const [photoUrl, setPhotoUrl] = useState<string>(() => {
