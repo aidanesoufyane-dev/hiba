@@ -16,7 +16,7 @@ export const Projects: React.FC = () => {
   });
 
   return (
-    <section id="projects" className="py-20 sm:py-28 relative bg-[#0B0A0F] border-t border-white/[0.06]">
+    <section id="projects" className="py-20 sm:py-28 relative overflow-hidden bg-[#0B0A0F] border-t border-white/[0.06]">
       {/* Background ambient lighting */}
       <div className="absolute top-1/3 -right-40 w-96 h-96 bg-[#9B5CFF]/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -67,12 +67,12 @@ export const Projects: React.FC = () => {
         </div>
 
         {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid w-full grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
               onClick={() => setActiveProject(project)}
-              className="group cursor-pointer flex flex-col justify-between rounded-2xl bg-[#13111C]/90 border border-white/[0.08] hover:border-[#9B5CFF]/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#9B5CFF]/15 overflow-hidden"
+              className="group w-full min-w-0 cursor-pointer flex flex-col justify-between rounded-2xl bg-[#13111C]/90 border border-white/[0.08] hover:border-[#9B5CFF]/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#9B5CFF]/15 overflow-hidden"
             >
               <div>
                 {/* Project Image Container with Top Badge */}

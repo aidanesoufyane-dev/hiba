@@ -46,7 +46,7 @@ export const WhatIDo: React.FC = () => {
         </div>
 
         {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
           {WHAT_I_DO.map((item, idx) => (
             <div
               key={item.number}

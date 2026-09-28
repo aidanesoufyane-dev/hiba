@@ -29,6 +29,15 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [project, onClose]);
 
+  useEffect(() => {
+    if (!project) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [project]);
+
   if (!project) return null;
 
   const currentImage = project.images[activeImageIndex] || project.thumbnail;
@@ -37,26 +46,26 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-y-auto overscroll-contain bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-stretch lg:items-center justify-center p-0 lg:p-6 overflow-hidden bg-black/90 backdrop-blur-md animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-5xl my-2 sm:my-auto max-h-[calc(100dvh-1rem)] sm:max-h-[calc(100dvh-3rem)] bg-[#13111C] border border-white/[0.12] rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden text-white flex flex-col"
+        className="relative w-full lg:max-w-5xl h-[100dvh] lg:h-auto lg:max-h-[calc(100dvh-3rem)] bg-[#13111C] border-0 lg:border border-white/[0.12] rounded-none lg:rounded-3xl shadow-2xl overflow-hidden text-white flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Top Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.08] bg-[#0E0C14]">
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-xs text-[#B77CFF] bg-[#1E192E] px-2.5 py-1 rounded-md border border-white/10">
+        <div className="relative z-20 flex shrink-0 items-center justify-between gap-3 px-4 sm:px-6 py-3 sm:py-4 border-b border-white/[0.08] bg-[#0E0C14]">
+          <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+            <span className="shrink-0 font-mono text-[10px] sm:text-xs text-[#B77CFF] bg-[#1E192E] px-2 sm:px-2.5 py-1 rounded-md border border-white/10">
               PROJECT {project.number}
             </span>
-            <h3 className="font-heading font-bold text-lg sm:text-xl text-white">
+            <h3 className="truncate font-heading font-bold text-sm sm:text-xl text-white">
               {project.title}
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-[#A7A1B0] hover:text-white hover:bg-white/10 rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9B5CFF]"
+            className="shrink-0 p-2 text-[#A7A1B0] hover:text-white hover:bg-white/10 rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#9B5CFF]"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -64,13 +73,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </div>
 
         {/* Modal Body */}
-        <div className="p-4 sm:p-8 min-h-0 overflow-y-auto overscroll-contain space-y-6 sm:space-y-8">
+        <div className="flex-1 p-3 sm:p-6 lg:p-8 min-h-0 overflow-y-auto overscroll-contain space-y-5 sm:space-y-8">
           {/* Main Visual Showcase / Carousel */}
-          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#0A090D] border border-white/[0.08] flex flex-col items-center justify-center min-h-[210px] sm:min-h-[420px] max-h-[500px]">
+          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#08070B] border border-white/[0.08] flex items-center justify-center h-[42dvh] min-h-[260px] max-h-[520px] sm:h-[52dvh] lg:h-[420px]">
             <img
               src={currentImage}
               alt={`${project.title} screenshot ${activeImageIndex + 1}`}
-              className="max-h-[460px] w-auto max-w-full object-contain p-4 transition-all duration-300"
+              className="w-full h-full object-contain p-2 sm:p-4 transition-all duration-300"
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).src = project.thumbnail;
               }}
@@ -85,7 +94,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                       (prev) => (prev - 1 + project.images.length) % project.images.length
                     )
                   }
-                  className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 transition-all hover:scale-110 active:scale-95"
+                  className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 p-2 sm:p-2.5 rounded-full bg-black/70 hover:bg-black/90 text-white border border-white/20 transition-all hover:scale-110 active:scale-95"
                   aria-label="Previous image"
                 >
                   <ChevronLeft className="w-5 h-5" />
@@ -94,7 +103,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   onClick={() =>
                     setActiveImageIndex((prev) => (prev + 1) % project.images.length)
                   }
-                  className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/20 transition-all hover:scale-110 active:scale-95"
+                  className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 p-2 sm:p-2.5 rounded-full bg-black/70 hover:bg-black/90 text-white border border-white/20 transition-all hover:scale-110 active:scale-95"
                   aria-label="Next image"
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -110,12 +119,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Thumbnails Row */}
           {project.images.length > 1 && (
-            <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+            <div className="flex snap-x items-center gap-2 overflow-x-auto px-1 pb-2 scrollbar-none">
               {project.images.map((img, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveImageIndex(idx)}
-                  className={`relative flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 transition-all ${
+                  className={`relative snap-start flex-shrink-0 w-14 h-14 sm:w-20 sm:h-20 rounded-lg sm:rounded-xl overflow-hidden border-2 transition-all ${
                     activeImageIndex === idx
                       ? 'border-[#B77CFF] scale-105 shadow-md shadow-[#9B5CFF]/30'
                       : 'border-white/10 opacity-60 hover:opacity-100'
@@ -132,19 +141,19 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           )}
 
           {/* Project Details Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4 border-t border-white/[0.08]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 pt-5 border-t border-white/[0.08]">
             {/* Left Column: Description & Features */}
             <div className="lg:col-span-8 space-y-6">
               <div>
                 <h4 className="text-xs font-mono uppercase text-[#B77CFF] tracking-wider mb-1">
                   {project.subtitle}
                 </h4>
-                <h2 className="text-2xl sm:text-3xl font-bold font-heading text-white">
+                <h2 className="text-xl sm:text-3xl font-bold font-heading text-white">
                   {project.title}
                 </h2>
               </div>
 
-              <div className="text-sm sm:text-base text-[#A7A1B0] leading-relaxed space-y-3 whitespace-pre-line">
+              <div className="text-sm sm:text-base text-[#A7A1B0] leading-6 sm:leading-relaxed space-y-3 whitespace-pre-line">
                 <p>{project.longDesc}</p>
               </div>
 

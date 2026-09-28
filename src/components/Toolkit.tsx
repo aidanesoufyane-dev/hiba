@@ -86,7 +86,7 @@ export const Toolkit: React.FC = () => {
         </div>
 
         {/* 4 Category Groups Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {TOOLKIT_GROUPS.map((group) => (
             <div
               key={group.category}
@@ -106,7 +106,7 @@ export const Toolkit: React.FC = () => {
               </div>
 
               {/* Skills in 2-column grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3.5">
                 {group.skills.map((skill) => (
                   <div
                     key={skill.name}
