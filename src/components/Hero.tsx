@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Top Eyebrow Bar */}
-        <div className="flex flex-wrap items-center justify-between gap-3 pb-8 text-xs font-mono uppercase tracking-widest text-[#A7A1B0] border-b border-white/[0.06]">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-6 sm:pb-8 text-[10px] min-[380px]:text-xs font-mono uppercase tracking-wider sm:tracking-widest text-[#A7A1B0] border-b border-white/[0.06]">
           <div className="flex items-center gap-2">
             <span className="w-6 h-[1px] bg-[#9B5CFF]" />
             <span className="text-[#C9A7FF]">MOBILE & WEB DEVELOPER</span>
@@ -47,7 +47,7 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-7 flex flex-col justify-center">
             {/* Giant Title with Script Accent */}
             <div className="relative mb-6">
-              <h1 className="font-display uppercase text-6xl sm:text-8xl md:text-9xl lg:text-[7.5rem] xl:text-[8.5rem] leading-[0.88] tracking-tight text-white font-black select-none">
+              <h1 className="font-display uppercase text-[clamp(3.5rem,20vw,6rem)] sm:text-8xl md:text-9xl lg:text-[7.5rem] xl:text-[8.5rem] leading-[0.88] tracking-tight text-white font-black select-none">
                 <span className="block text-white hover:text-[#C9A7FF] transition-colors duration-300">
                   HIBA
                 </span>
@@ -79,7 +79,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-col min-[440px]:flex-row flex-wrap items-stretch min-[440px]:items-center gap-3 sm:gap-4 pt-2">
               <a
                 href="#projects"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-[#9B5CFF] to-[#7B39EC] hover:from-[#B77CFF] hover:to-[#9B5CFF] rounded-xl transition-all duration-200 shadow-lg shadow-[#9B5CFF]/25 hover:shadow-[#9B5CFF]/40 active:scale-95"
@@ -100,7 +100,7 @@ export const Hero: React.FC = () => {
                 href="https://github.com/Hiba13434085"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center px-4 py-3.5 text-xs font-mono text-[#A7A1B0] hover:text-white border border-white/[0.08] hover:border-white/20 rounded-xl transition-colors"
+                className="inline-flex min-w-0 items-center justify-center px-3 sm:px-4 py-3.5 text-[11px] sm:text-xs font-mono text-[#A7A1B0] hover:text-white border border-white/[0.08] hover:border-white/20 rounded-xl transition-colors break-all"
                 title="View GitHub Profile"
               >
                 github.com/Hiba13434085
@@ -109,7 +109,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Right Column: Hero Portrait Composition */}
-          <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
+          <div className="lg:col-span-5 relative flex justify-center lg:justify-end px-2 sm:px-0">
             <div className="relative w-full max-w-[340px] sm:max-w-[400px]">
               {/* Backlight Glow Disc */}
               <div className="absolute inset-0 bg-gradient-to-tr from-[#9B5CFF]/40 via-[#B77CFF]/20 to-transparent rounded-[2.5rem] blur-2xl transform scale-105 pointer-events-none" />
@@ -196,7 +196,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Hero Statistics & Factual Highlights Bar */}
-        <div className="mt-16 sm:mt-20 pt-8 border-t border-white/[0.08] grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="mt-16 sm:mt-20 pt-8 border-t border-white/[0.08] grid grid-cols-1 min-[380px]:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
           {HERO_STATS.map((stat, idx) => (
             <div
               key={idx}

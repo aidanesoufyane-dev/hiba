@@ -35,12 +35,12 @@ export const EducationAndMore: React.FC = () => {
     <section id="education" className="py-20 sm:py-28 relative bg-[#0B0A0F] border-t border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Heading */}
-        <div className="mb-16">
+        <div className="mb-10 sm:mb-16">
           <div className="flex items-center gap-2 text-xs font-mono uppercase text-[#B77CFF] tracking-wider mb-2">
             <span>Academic & Personal</span>
             <span>✦</span>
           </div>
-          <h2 className="font-display uppercase text-5xl sm:text-6xl md:text-7xl text-white tracking-tight leading-[0.9]">
+          <h2 className="font-display uppercase text-[clamp(2.75rem,13vw,4.5rem)] text-white tracking-tight leading-[0.9] break-words">
             EDUCATION <br />
             <span className="bg-gradient-to-r from-white via-[#F5F3F7] to-[#B77CFF] bg-clip-text text-transparent">
               & PROFILE
@@ -54,7 +54,7 @@ export const EducationAndMore: React.FC = () => {
           <div className="lg:col-span-7 space-y-8">
             {/* Education Box */}
             <div className="p-6 sm:p-8 rounded-2xl bg-[#13111C]/80 border border-white/[0.08]">
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.06]">
+              <div className="flex flex-wrap items-start justify-between gap-2 mb-6 pb-4 border-b border-white/[0.06]">
                 <h3 className="font-heading font-bold text-lg uppercase tracking-wide text-white flex items-center gap-2">
                   <GraduationCap className="w-5 h-5 text-[#B77CFF]" />
                   <span>Education & Diplomas</span>
@@ -93,7 +93,7 @@ export const EducationAndMore: React.FC = () => {
 
             {/* Activities & Community Volunteering */}
             <div className="p-6 sm:p-8 rounded-2xl bg-[#13111C]/80 border border-white/[0.08]">
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.06]">
+              <div className="flex flex-wrap items-start justify-between gap-2 mb-6 pb-4 border-b border-white/[0.06]">
                 <h3 className="font-heading font-bold text-lg uppercase tracking-wide text-white flex items-center gap-2">
                   <Users className="w-5 h-5 text-[#9B5CFF]" />
                   <span>Activities & Volunteering</span>
@@ -128,7 +128,7 @@ export const EducationAndMore: React.FC = () => {
           <div className="lg:col-span-5 space-y-8">
             {/* Languages Card */}
             <div className="p-6 sm:p-8 rounded-2xl bg-[#13111C]/80 border border-white/[0.08]">
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/[0.06]">
+              <div className="flex flex-wrap items-start justify-between gap-2 mb-6 pb-4 border-b border-white/[0.06]">
                 <h3 className="font-heading font-bold text-lg uppercase tracking-wide text-white flex items-center gap-2">
                   <Languages className="w-5 h-5 text-[#C9A7FF]" />
                   <span>Languages</span>
@@ -140,7 +140,7 @@ export const EducationAndMore: React.FC = () => {
                 {LANGUAGES.map((lang) => (
                   <div
                     key={lang.language}
-                    className="p-3.5 rounded-xl bg-[#181524]/60 border border-white/[0.04] flex items-center justify-between"
+                    className="p-3.5 rounded-xl bg-[#181524]/60 border border-white/[0.04] flex flex-wrap items-center justify-between gap-2"
                   >
                     <div>
                       <span className="text-sm font-bold text-white block">

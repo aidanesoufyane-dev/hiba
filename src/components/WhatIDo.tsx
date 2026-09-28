@@ -24,13 +24,13 @@ export const WhatIDo: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Heading & Lead */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-end mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-end mb-10 sm:mb-16">
           <div className="lg:col-span-6">
             <div className="flex items-center gap-2 text-xs font-mono uppercase text-[#B77CFF] tracking-wider mb-2">
               <span>Capabilities</span>
               <span>✦</span>
             </div>
-            <h2 className="font-display uppercase text-5xl sm:text-6xl md:text-7xl text-white tracking-tight leading-[0.9]">
+            <h2 className="font-display uppercase text-[clamp(2.75rem,13vw,4.5rem)] text-white tracking-tight leading-[0.9]">
               WHAT <br />
               <span className="bg-gradient-to-r from-white via-[#F5F3F7] to-[#B77CFF] bg-clip-text text-transparent">
                 I DO ✦
@@ -50,7 +50,7 @@ export const WhatIDo: React.FC = () => {
           {WHAT_I_DO.map((item, idx) => (
             <div
               key={item.number}
-              className="group relative flex flex-col justify-between p-7 rounded-2xl bg-[#13111C]/90 border border-white/[0.08] hover:border-[#9B5CFF]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#9B5CFF]/10 overflow-hidden"
+              className="group relative flex flex-col justify-between p-5 sm:p-7 rounded-2xl bg-[#13111C]/90 border border-white/[0.08] hover:border-[#9B5CFF]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-[#9B5CFF]/10 overflow-hidden"
             >
               {/* Subtle top glow line on hover */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#9B5CFF] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

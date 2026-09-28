@@ -28,7 +28,7 @@ export const Projects: React.FC = () => {
               <span>Selected Works</span>
               <span>✦</span>
             </div>
-            <h2 className="font-display uppercase text-5xl sm:text-6xl md:text-7xl text-white tracking-tight leading-[0.9]">
+            <h2 className="font-display uppercase text-[clamp(2.75rem,13vw,4.5rem)] text-white tracking-tight leading-[0.9]">
               FEATURED <br />
               <span className="bg-gradient-to-r from-white via-[#F5F3F7] to-[#B77CFF] bg-clip-text text-transparent">
                 PROJECTS
@@ -37,13 +37,13 @@ export const Projects: React.FC = () => {
           </div>
 
           {/* Interactive Filter Tabs & Link */}
-          <div className="flex flex-wrap items-center gap-2">
-            <div className="flex items-center p-1 bg-[#15131C] border border-white/[0.08] rounded-xl">
+          <div className="flex min-w-0 flex-wrap items-center gap-2">
+            <div className="grid w-full grid-cols-3 min-[440px]:flex min-[440px]:w-auto items-center p-1 bg-[#15131C] border border-white/[0.08] rounded-xl">
               {(['All', 'Flutter', 'Android'] as const).map((filter) => (
                 <button
                   key={filter}
                   onClick={() => setSelectedFilter(filter)}
-                  className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all duration-200 ${
+                  className={`px-2 min-[380px]:px-3.5 py-1.5 text-[11px] min-[380px]:text-xs font-medium rounded-lg transition-all duration-200 ${
                     selectedFilter === filter
                       ? 'bg-[#9B5CFF] text-white shadow-md shadow-[#9B5CFF]/30'
                       : 'text-[#A7A1B0] hover:text-white'

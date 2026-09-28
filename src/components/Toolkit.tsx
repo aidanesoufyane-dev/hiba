@@ -66,13 +66,13 @@ export const Toolkit: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Heading */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-16">
           <div>
             <div className="flex items-center gap-2 text-xs font-mono uppercase text-[#B77CFF] tracking-wider mb-2">
               <span>Technical Stack</span>
               <span>✦</span>
             </div>
-            <h2 className="font-display uppercase text-5xl sm:text-6xl md:text-7xl text-white tracking-tight leading-[0.9]">
+            <h2 className="font-display uppercase text-[clamp(2.75rem,13vw,4.5rem)] text-white tracking-tight leading-[0.9]">
               MY <br />
               <span className="bg-gradient-to-r from-white via-[#F5F3F7] to-[#B77CFF] bg-clip-text text-transparent">
                 TOOLKIT
@@ -90,7 +90,7 @@ export const Toolkit: React.FC = () => {
           {TOOLKIT_GROUPS.map((group) => (
             <div
               key={group.category}
-              className="p-6 sm:p-8 rounded-2xl bg-[#13111C]/80 border border-white/[0.08] hover:border-[#9B5CFF]/30 transition-all duration-300"
+              className="p-5 sm:p-8 rounded-2xl bg-[#13111C]/80 border border-white/[0.08] hover:border-[#9B5CFF]/30 transition-all duration-300"
             >
               {/* Category Header */}
               <div className="mb-6 pb-4 border-b border-white/[0.06] flex items-center justify-between">

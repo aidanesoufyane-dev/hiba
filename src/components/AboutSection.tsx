@@ -17,7 +17,7 @@ export const AboutSection: React.FC = () => {
               <span>✦</span>
             </div>
 
-            <h2 className="font-display uppercase text-5xl sm:text-6xl md:text-7xl text-white tracking-tight leading-[0.9]">
+            <h2 className="font-display uppercase text-[clamp(2.75rem,13vw,4.5rem)] text-white tracking-tight leading-[0.9] break-words">
               ENGINEERING FOR <br />
               <span className="bg-gradient-to-r from-white via-[#F5F3F7] to-[#B77CFF] bg-clip-text text-transparent">
                 REAL UTILITY
@@ -55,10 +55,10 @@ export const AboutSection: React.FC = () => {
 
           {/* Right Column: Key Pillars / Stats Card */}
           <div className="lg:col-span-5">
-            <div className="p-8 rounded-3xl bg-[#13111C]/90 border border-white/[0.08] space-y-6 relative overflow-hidden">
+            <div className="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-[#13111C]/90 border border-white/[0.08] space-y-6 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#9B5CFF]/10 rounded-full blur-2xl pointer-events-none" />
 
-              <h3 className="font-heading font-bold text-lg uppercase tracking-wide text-white flex items-center justify-between">
+              <h3 className="font-heading font-bold text-base sm:text-lg uppercase tracking-wide text-white flex flex-wrap items-center justify-between gap-2">
                 <span>Core Engineering Principles</span>
                 <span className="text-xs font-mono text-[#B77CFF]">PILLARS</span>
               </h3>

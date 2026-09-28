@@ -7,12 +7,12 @@ export const ProcessAndExperience: React.FC = () => {
     <section id="experience" className="py-20 sm:py-28 relative bg-[#0B0A0F] border-t border-white/[0.06]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="mb-16">
+        <div className="mb-10 sm:mb-16">
           <div className="flex items-center gap-2 text-xs font-mono uppercase text-[#B77CFF] tracking-wider mb-2">
             <span>Methodology & Career</span>
             <span>✦</span>
           </div>
-          <h2 className="font-display uppercase text-5xl sm:text-6xl md:text-7xl text-white tracking-tight leading-[0.9]">
+          <h2 className="font-display uppercase text-[clamp(2.65rem,13vw,4.5rem)] text-white tracking-tight leading-[0.9] break-words">
             WORK PROCESS <br />
             <span className="bg-gradient-to-r from-white via-[#F5F3F7] to-[#B77CFF] bg-clip-text text-transparent">
               & EXPERIENCE
@@ -64,7 +64,7 @@ export const ProcessAndExperience: React.FC = () => {
 
             {EXPERIENCE.map((exp, idx) => (
               <div key={idx} className="space-y-4">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="px-2.5 py-1 text-[11px] font-mono rounded-md bg-[#1C1828] border border-white/10 text-[#C9A7FF]">
                     {exp.period}
                   </span>
@@ -78,7 +78,7 @@ export const ProcessAndExperience: React.FC = () => {
                   <h4 className="text-base font-bold font-heading text-white">
                     {exp.role}
                   </h4>
-                  <div className="flex items-center gap-2 text-xs font-mono text-[#B77CFF] mt-1">
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-mono text-[#B77CFF] mt-1">
                     <Briefcase className="w-3.5 h-3.5" />
                     <span>{exp.company}</span>
                     <span>·</span>
@@ -117,7 +117,7 @@ export const ProcessAndExperience: React.FC = () => {
           </div>
 
           {/* Column 3 (4 cols): Reference-inspired CTA Card ("LET'S BUILD SOMETHING USEFUL TOGETHER") */}
-          <div className="lg:col-span-4 p-8 rounded-2xl bg-gradient-to-br from-[#9B5CFF] via-[#8545EA] to-[#6823CE] text-white shadow-2xl shadow-[#9B5CFF]/30 flex flex-col justify-between min-h-[380px] relative overflow-hidden group">
+          <div className="lg:col-span-4 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[#9B5CFF] via-[#8545EA] to-[#6823CE] text-white shadow-2xl shadow-[#9B5CFF]/30 flex flex-col justify-between min-h-[340px] sm:min-h-[380px] relative overflow-hidden group">
             {/* Background decorative star */}
             <div className="absolute top-4 right-4 text-white/30 text-3xl font-light select-none group-hover:rotate-45 transition-transform duration-500">
               ✦

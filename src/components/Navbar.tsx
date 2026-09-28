@@ -14,6 +14,11 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
@@ -37,10 +42,10 @@ export const Navbar: React.FC = () => {
           {/* Zone 1: Single text element wordmark */}
           <a
             href="#"
-            className="flex items-center gap-2 group text-white tracking-tight font-heading font-bold text-lg sm:text-xl"
+            className="flex min-w-0 items-center gap-2 group text-white tracking-tight font-heading font-bold text-base min-[380px]:text-lg sm:text-xl"
           >
             <span className="w-2.5 h-2.5 rounded-full bg-[#9B5CFF] group-hover:scale-125 transition-transform duration-200" />
-            <span className="tracking-wide">HIBA MOUNIR</span>
+            <span className="truncate tracking-wide">HIBA MOUNIR</span>
             <span className="hidden sm:inline text-xs font-mono text-[#A7A1B0] font-normal tracking-normal border border-white/10 px-2 py-0.5 rounded-md ml-1">
               DEV
             </span>
@@ -61,7 +66,7 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Zone 3: Primary action button + Mobile toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <a
               href="#contact"
               className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-[#9B5CFF] to-[#7B39EC] hover:from-[#B77CFF] hover:to-[#9B5CFF] rounded-lg transition-all duration-200 shadow-md shadow-[#9B5CFF]/20 hover:shadow-[#9B5CFF]/40 active:scale-95 whitespace-nowrap"
@@ -84,7 +89,7 @@ export const Navbar: React.FC = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-full bg-[#0E0C14]/98 backdrop-blur-xl border-b border-white/[0.08] shadow-2xl px-6 py-6 transition-all duration-300 animate-in fade-in slide-in-from-top-4">
+        <div className="lg:hidden fixed inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain bg-[#0E0C14]/98 backdrop-blur-xl border-b border-white/[0.08] shadow-2xl px-4 sm:px-6 py-5 sm:py-6 transition-all duration-300 animate-in fade-in slide-in-from-top-4">
           <div className="flex flex-col gap-4">
             <div className="flex items-center justify-between pb-3 border-b border-white/[0.06] text-xs font-mono text-[#A7A1B0]">
               <span className="flex items-center gap-1.5">

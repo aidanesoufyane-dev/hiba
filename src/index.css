@@ -17,6 +17,29 @@
     color: #F5F3F7;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
+    min-width: 280px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  img,
+  video,
+  svg {
+    max-width: 100%;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@media (max-width: 639px) {
+  section {
+    scroll-margin-top: 4.5rem;
   }
 }
 

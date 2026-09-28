@@ -36,12 +36,12 @@ export const ContactSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase text-[#B77CFF] tracking-wider mb-2">
             <span>Direct Outreach</span>
             <span>✦</span>
           </div>
-          <h2 className="font-display uppercase text-5xl sm:text-6xl md:text-7xl text-white tracking-tight leading-[0.9]">
+          <h2 className="font-display uppercase text-[clamp(2.6rem,13vw,4.5rem)] text-white tracking-tight leading-[0.9] break-words">
             START A <br />
             <span className="bg-gradient-to-r from-white via-[#F5F3F7] to-[#B77CFF] bg-clip-text text-transparent">
               CONVERSATION
@@ -61,8 +61,8 @@ export const ContactSection: React.FC = () => {
             </h3>
 
             {/* Email card */}
-            <div className="p-4 rounded-xl bg-[#13111C]/90 border border-white/[0.08] hover:border-[#9B5CFF]/40 transition-colors flex items-center justify-between group">
-              <div className="flex items-center gap-3">
+            <div className="min-w-0 p-3 sm:p-4 rounded-xl bg-[#13111C]/90 border border-white/[0.08] hover:border-[#9B5CFF]/40 transition-colors flex items-center justify-between gap-2 group">
+              <div className="flex min-w-0 items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-[#1D192C] flex items-center justify-center text-[#B77CFF]">
                   <Mail className="w-4 h-4" />
                 </div>
@@ -91,8 +91,8 @@ export const ContactSection: React.FC = () => {
             </div>
 
             {/* Phone card */}
-            <div className="p-4 rounded-xl bg-[#13111C]/90 border border-white/[0.08] hover:border-[#9B5CFF]/40 transition-colors flex items-center justify-between group">
-              <div className="flex items-center gap-3">
+            <div className="min-w-0 p-3 sm:p-4 rounded-xl bg-[#13111C]/90 border border-white/[0.08] hover:border-[#9B5CFF]/40 transition-colors flex items-center justify-between gap-2 group">
+              <div className="flex min-w-0 items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-[#1D192C] flex items-center justify-center text-[#9B5CFF]">
                   <Phone className="w-4 h-4" />
                 </div>

@@ -37,11 +37,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-start sm:items-center justify-center p-2 sm:p-6 overflow-y-auto overscroll-contain bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-5xl my-auto bg-[#13111C] border border-white/[0.12] rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden text-white"
+        className="relative w-full max-w-5xl my-2 sm:my-auto max-h-[calc(100dvh-1rem)] sm:max-h-[calc(100dvh-3rem)] bg-[#13111C] border border-white/[0.12] rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden text-white flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Top Header */}
@@ -64,9 +64,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </div>
 
         {/* Modal Body */}
-        <div className="p-6 sm:p-8 max-h-[82vh] overflow-y-auto space-y-8">
+        <div className="p-4 sm:p-8 min-h-0 overflow-y-auto overscroll-contain space-y-6 sm:space-y-8">
           {/* Main Visual Showcase / Carousel */}
-          <div className="relative rounded-2xl overflow-hidden bg-[#0A090D] border border-white/[0.08] flex flex-col items-center justify-center min-h-[300px] sm:min-h-[420px] max-h-[500px]">
+          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#0A090D] border border-white/[0.08] flex flex-col items-center justify-center min-h-[210px] sm:min-h-[420px] max-h-[500px]">
             <img
               src={currentImage}
               alt={`${project.title} screenshot ${activeImageIndex + 1}`}
